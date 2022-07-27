@@ -1,0 +1,53 @@
+.switch-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 900px; */
+    transform: translateX(550px);
+  }
+  #switch{
+    display: none;
+  }
+  
+  .toggle{
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 70px;
+    height: 30px;
+    background: grey;
+    /* border: 2px solid black; */
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  .toggle:active::after{
+    width: 50px;
+  }
+  
+  #switch:checked + .toggle{
+    background-color: #2196F3;
+    /* border:2px solid white; */
+  }
+  
+  .toggle::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    /* background: black; */
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  #switch[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  #switch:checked + .toggle::after{
+    /* background-color: white; */
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
